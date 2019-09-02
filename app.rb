@@ -12,8 +12,23 @@ get '/pie' do
     'Steak'
 end
 
-get '/cat' do
-  "<div style='border: 3px dashed red'>
-  <img src='http://bit.ly/1eze8aE'>
-  </div>"
+get '/random-cat' do
+@name = ["Bat Cat", "Wonder Cat", "Super Cat"].sample
+  erb(:index)
+end
+
+get '/named-cat' do
+p params
+@name = params[:name]
+erb(:index)
+end
+
+get '/cat-form' do
+  erb :cat_form
+end
+
+post '/named-cat' do
+  p params
+  @name = params[:name]
+  erb :index
 end
