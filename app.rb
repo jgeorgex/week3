@@ -1,5 +1,9 @@
 require 'sinatra'
 
+get '/' do
+  'You are on the hompage'
+end
+
 get '/hello' do
   'Hello Planet'
 end
